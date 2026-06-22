@@ -1,0 +1,81 @@
+package ktaris;
+
+public class KtarisMain {
+
+    public static void main(String[] args) {
+        //4.1.1
+        // Erzeugen der Objekte
+        Gegenstand g1 = new Gegenstand("Quantenkanone", 17);
+        Gegenstand g2 = new Gegenstand("Graviton-Blaster", 15);
+
+        /* TODO: 1. Erzeugen Sie ein zusaetzliches Objekt g3, g4
+         * die Attributwerte für alle Instanzvariablen finden Sie im Objektdiagramm
+         * aus (Hinweis: verwenden Sie den vollparametrisierten Konstruktor)
+         */
+        Gegenstand g3 = new Gegenstand( "Quantenkanone", 17);
+        Gegenstand g4 = new Gegenstand("Dunkler-Ermitter", 45);
+
+        /* TODO: 2. Erzeugen Sie das zusaetzliche Objekt g5 mit dem Konstruktor,
+         * der nichts initialisiert (parameterloser Konstruktor),
+         */
+        Gegenstand g5 = new Gegenstand();
+        // Setzen der Attribute
+        /* TODO: 3. Fuegen Sie g5 die Attributwerte über die Setter hinzu, siehe Objektdiagramm
+         */
+        g5.setTyp("Schatten-Flamme");
+        g5.setFaktor(15);
+
+
+        // 4.1.2
+        //Erstellung Völker
+        Volk katarus = new Volk("Katarus", 1247);
+        Volk arpasian = new Volk("Arparsian", 1023);
+
+        //4.1.3
+        //Erstellung Krieger
+        Krieger allana = new Krieger("Allana", 140, 32);
+        Krieger tystae = new Krieger("Tystae", 140, 32);
+        Krieger inaraSerra = new Krieger("InaraSerra", 140, 32);
+
+        // Bildschirmausgabe
+        System.out.println("Typ: " + g1.getTyp());
+        System.out.println("Faktor: " + g1.getFaktor());
+        System.out.println("######################################");
+        System.out.println(g1.toString()); // Die toString() Methode wird aufgerufen
+        System.out.println();
+        System.out.println("Typ: " + g2.getTyp());
+        System.out.println("Faktor: " + g2.getFaktor());
+        System.out.println("######################################");
+        System.out.println(g2); // Die toString() Methode wird selbstständig aufgerufen
+        System.out.println();
+
+        // TODO: 4. Ausgabe von g3, ergänzen Sie die fehlenden Methodenaufrufen
+        System.out.println("Typ: " +  g3.getTyp());
+        System.out.println("Faktor: " + g3.getFaktor());
+        System.out.println("######################################");
+        System.out.println(g3); // TODO: 5. Die toString() Methode wird aufgerufen
+        System.out.println();
+
+        /* TODO: 6. Geben Sie g4, g5 auch auf dem Bildschirm aus, in dem Sie die
+         * fehlenden Methodenaufrufen ergänzen.
+         */
+        System.out.println("Typ:" + g4.getTyp());
+        System.out.println("Faktor:" + g4.getFaktor());
+        System.out.println();
+        System.out.println("Typ:" + g5.getTyp());
+        System.out.println("Faktor:" + g5.getFaktor());
+        // Zusatzaufgabe 6
+        /*
+        5 Gegenstände in einem Codeblock
+        */
+        System.out.println(g1 + ", " + g2 + ", " + g3 + ", " + g4 + ", " + g5);
+        // 4.1.2
+        //Erstellung Völker
+        System.out.println(arpasian + " " + katarus);
+        //4.1.3
+        //Krieger
+        System.out.println(allana + " " + inaraSerra + " " + tystae);
+    }
+
+
+}
