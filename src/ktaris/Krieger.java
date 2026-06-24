@@ -73,6 +73,7 @@ public class Krieger {
         }
     }
 
+
     @Override
     public String toString() {
         return "Krieger{" +
