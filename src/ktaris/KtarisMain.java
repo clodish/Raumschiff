@@ -34,8 +34,25 @@ public class KtarisMain {
         //4.1.3
         //Erstellung Krieger
         Krieger allana = new Krieger("Allana", 140, 32);
-        Krieger tystae = new Krieger("Tystae", 140, 32);
-        Krieger inaraSerra = new Krieger("InaraSerra", 140, 32);
+        Krieger tystae = new Krieger("Tystae", 70, 17);
+        Krieger inaraSerra = new Krieger("InaraSerra", 163, 60);
+        Krieger testkrieger = new Krieger( "tomtom", 111, 50);
+
+        //4.2.2.6
+        katarus.addKrieger(allana);
+        katarus.addKrieger(tystae);
+        arpasian.addKrieger(inaraSerra);
+        arpasian.addKrieger(testkrieger);
+        //4.2.3
+        allana.addGegenstand(g1);
+        allana.addGegenstand(g2);
+        tystae.addGegenstand(g3);
+        inaraSerra.addGegenstand(g4);
+        inaraSerra.addGegenstand(g5);
+
+        // Test, removeKrieger
+        arpasian.removeKrieger(testkrieger);
+
 
         // Bildschirmausgabe
         System.out.println("Typ: " + g1.getTyp());
@@ -75,6 +92,20 @@ public class KtarisMain {
         //4.1.3
         //Krieger
         System.out.println(allana + " " + inaraSerra + " " + tystae);
+
+        //4.2.2.6
+        System.out.println("Mitglieder: " + katarus.getMitglieder());
+        System.out.println("Mitglieder: " + arpasian.getMitglieder());
+        //4.2.3
+        System.out.println("*****************");
+        System.out.println(allana.gegenstaende);
+        System.out.println(tystae.gegenstaende);
+        System.out.println(inaraSerra.gegenstaende);
+
+
+
+
+
     }
 
 

@@ -4,6 +4,7 @@ public class Gegenstand {
     String typ;
     int faktor;
 
+
     public Gegenstand(){
     }
     public Gegenstand(String typ, int faktor){
@@ -31,7 +32,9 @@ public class Gegenstand {
 
     @Override
     public String toString() {
-        return "Typ: " + typ + " \n " + "Faktor: " + faktor;
+        return "Gegenstand{" +
+                "typ='" + typ + '\'' +
+                ", faktor=" + faktor +
+                '}';
     }
-
 }

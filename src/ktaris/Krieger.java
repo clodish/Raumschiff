@@ -1,17 +1,35 @@
 package ktaris;
 
+import java.util.ArrayList;
+
 public class Krieger {
     String name;
     int alter;
     int macht = 1;
+    ArrayList<Gegenstand> gegenstaende;
 
-    public Krieger(){};
+    public Krieger(){
+        this.gegenstaende = new ArrayList<Gegenstand>();
+    };
     public Krieger(String name, int alter){
+        this();
+        this.name = name;
+        this.alter = alter;
     }
     public Krieger( String name,int alter, int macht) {
+        this();
         this.alter = alter;
         this.name = name;
         this.macht = macht;
+    }
+    public void addGegenstand(Gegenstand gegenstand){
+        if(!gegenstaende.contains(gegenstand)){
+                gegenstaende.add(gegenstand);
+                System.out.println("Gegenstand " + gegenstand + " hinzugefügt.");
+        }else System.out.println("Gegenstand ist bereits vorhanden.");
+    }
+    public void removeGegenstand(Gegenstand gegenstand){
+        gegenstaende.remove(gegenstand);
     }
     public void handeln(Gegenstand gegenstand){};
     public void treffen(Krieger krieger){};
@@ -34,6 +52,10 @@ public class Krieger {
 
     public int getMacht() {
         return macht;
+    }
+
+    public ArrayList<Gegenstand> getGegenstand() {
+        return gegenstaende;
     }
 
     public void setMacht(int macht) {
