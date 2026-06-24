@@ -45,8 +45,21 @@ public class Volk {
     public void setName(String name) {
         this.name = name;
     }
+
     public int getMacht(){
-        return 0;
+        int counter = 0;
+            if(mitglieder.isEmpty()){
+                return 0;
+            }else{
+                for(Krieger krieger : mitglieder){
+                    counter += krieger.getMacht();
+                }
+                if(chef != null){
+                    counter += chef.getMacht();
+                }
+                return counter;
+
+            }
     }
     public void removeKrieger(Krieger krieger){
         if(chef == krieger){
@@ -55,21 +68,9 @@ public class Volk {
         }else{
             mitglieder.remove(krieger);
         }
-
-
-
-
-        /*if(krieger == chef){
-            chef = null;
-            mitglieder.remove(krieger);
-            if (!mitglieder.isEmpty()){
-                chef = mitglieder.get(0);
-            }
-        }else if(mitglieder.isEmpty()){
-
+        if(chef == null && !mitglieder.isEmpty()){
+           chef = mitglieder.get(0);  // Ich wollte hier getFirst() nutzen, soll aber erst für Java Version 21 kompilieren.
         }
-*/
-
     }
     public void addKrieger(Krieger krieger){
         if(chef == null){

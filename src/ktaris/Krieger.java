@@ -3,9 +3,9 @@ package ktaris;
 import java.util.ArrayList;
 
 public class Krieger {
-    String name;
-    int alter;
-    int macht = 1;
+    private String name;
+    private int alter;
+    private int macht = 1;
     ArrayList<Gegenstand> gegenstaende;
 
     public Krieger(){
@@ -61,7 +61,17 @@ public class Krieger {
     public void setMacht(int macht) {
         this.macht = macht;
     }
-    public void berechneMacht(){};
+    public void berechneMacht(){
+        macht = 0;
+        if(gegenstaende.isEmpty()){
+            macht = 1;
+
+        }else{
+         for(Gegenstand gegenstand : gegenstaende){
+             macht += gegenstand.getFaktor();
+         }
+        }
+    }
 
     @Override
     public String toString() {
