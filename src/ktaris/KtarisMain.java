@@ -106,6 +106,24 @@ public class KtarisMain {
         System.out.println("⭐⭐⭐⭐⭐⭐⭐⭐");
         tystae.handeln(g3);
         tystae.handeln(g3);
+        System.out.println("⭐⭐⭐⭐⭐⭐⭐⭐");
+
+        //A4.4
+        Gegenstand g6 = new Gegenstand("Quantenkanone", 17);
+        allana.addGegenstand(g6);
+        System.out.println(allana.getMacht());
+        System.out.println(katarus.getMacht());
+        tystae.removeGegenstand(g3);
+        allana.handeln(g6);
+        tystae.handeln(g6);
+        System.out.println(katarus.getMacht());        Krieger bria = new Krieger("Bria", 148);
+        arpasian.setChef(bria);
+        System.out.println(arpasian.getMacht());
+        inaraSerra.handeln(g4);
+        bria.handeln(g4);
+        int faktorAllana = allana.gegenstaende.indexOf(g1);
+        faktorAllana = 12;
+        System.out.println(katarus.getMacht());
 
     }
 
