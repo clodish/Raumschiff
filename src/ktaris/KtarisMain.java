@@ -102,9 +102,10 @@ public class KtarisMain {
         System.out.println(tystae.gegenstaende);
         System.out.println(inaraSerra.gegenstaende);
 
-
-
-
+        // ⭐⭐ +handeln(gegenstand:Gegenstand): void
+        System.out.println("⭐⭐⭐⭐⭐⭐⭐⭐");
+        tystae.handeln(g3);
+        tystae.handeln(g3);
 
     }
 

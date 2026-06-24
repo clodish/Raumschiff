@@ -9,8 +9,8 @@ public class Krieger {
     ArrayList<Gegenstand> gegenstaende;
 
     public Krieger(){
-        this.gegenstaende = new ArrayList<Gegenstand>();
-    };
+        this.gegenstaende = new ArrayList<>();
+    }
     public Krieger(String name, int alter){
         this();
         this.name = name;
@@ -31,8 +31,23 @@ public class Krieger {
     public void removeGegenstand(Gegenstand gegenstand){
         gegenstaende.remove(gegenstand);
     }
-    public void handeln(Gegenstand gegenstand){};
-    public void treffen(Krieger krieger){};
+    public void handeln(Gegenstand gegenstand){
+
+        if(gegenstaende.contains(gegenstand)){
+            gegenstaende.remove(gegenstand);
+            System.out.println( this.name + " hat abgegeben: " + gegenstand);
+            berechneMacht();
+            System.out.println(this);
+        }else{
+            gegenstaende.add(gegenstand);
+            System.out.println(this.name + " hat aufgenommen: " + gegenstand);
+            berechneMacht();
+            System.out.println(this);
+
+        }
+
+    }
+    public void treffen(Krieger krieger){}
 
     public String getName() {
         return name;
@@ -61,7 +76,7 @@ public class Krieger {
     public void setMacht(int macht) {
         this.macht = macht;
     }
-    public void berechneMacht(){
+    private void berechneMacht(){
         macht = 0;
         if(gegenstaende.isEmpty()){
             macht = 1;
@@ -73,13 +88,13 @@ public class Krieger {
         }
     }
 
-
     @Override
     public String toString() {
         return "Krieger{" +
                 "name='" + name + '\'' +
                 ", alter=" + alter +
                 ", macht=" + macht +
+                ", gegenstaende=" + gegenstaende +
                 '}';
     }
 }
