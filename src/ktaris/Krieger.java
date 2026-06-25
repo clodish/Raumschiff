@@ -66,6 +66,7 @@ public class Krieger {
     }
 
     public int getMacht() {
+        berechneMacht();
         return macht;
     }
 

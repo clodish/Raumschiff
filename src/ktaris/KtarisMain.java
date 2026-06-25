@@ -108,23 +108,46 @@ public class KtarisMain {
         tystae.handeln(g3);
         System.out.println("⭐⭐⭐⭐⭐⭐⭐⭐");
 
-        //A4.4
+        //👽 A4.4
+        System.out.println("Allana findet einen neuen Gegenstand Quantenkanone mit dem Faktor 17. Sie hat nun zwei davon.");
         Gegenstand g6 = new Gegenstand("Quantenkanone", 17);
         allana.addGegenstand(g6);
+        System.out.println(allana.gegenstaende);
+
+        System.out.println("Allana zeigt ihre neue Macht an (49).");
         System.out.println(allana.getMacht());
-        System.out.println(katarus.getMacht());
-        tystae.removeGegenstand(g3);
-        allana.handeln(g6);
-        tystae.handeln(g6);
-        System.out.println(katarus.getMacht());        Krieger bria = new Krieger("Bria", 148);
-        arpasian.setChef(bria);
-        System.out.println(arpasian.getMacht());
-        inaraSerra.handeln(g4);
-        bria.handeln(g4);
-        int faktorAllana = allana.gegenstaende.indexOf(g1);
-        faktorAllana = 12;
+
+        System.out.println("Katarus zeigt seine Macht an (115).");
         System.out.println(katarus.getMacht());
 
+        System.out.println("Tystae verliert seine Quantenkanone.");
+        tystae.removeGegenstand(g3);
+
+        System.out.println("Allana schenkt ihre neue Quantenkanone an Tystae.");
+        allana.handeln(g6);
+        tystae.handeln(g6);
+
+        System.out.println("Katarus zeigt seine Macht an (81?).");
+        System.out.println(katarus.getMacht());
+
+        System.out.println("Arpasian nimmt die Kriegerin Bria (Alter: 148) auf. Sie wird auch gleich Chefin.");
+        Krieger bria = new Krieger("Bria", 148, 45);
+        arpasian.addKrieger(bria);
+        arpasian.setChef(bria);
+
+        System.out.println("Arpasian zeigt seine Macht an (62).");
+        System.out.println(arpasian.getMacht());
+
+        System.out.println("Zur Krönung erhält Bria den Dunkel-Emitter von Inara.");
+        inaraSerra.handeln(g4);
+        bria.handeln(g4);
+
+        // TODO reparieren
+        System.out.println("Bei genauer Betrachtung fällt auf, dass die Quantenkanone von Allana nur den Faktor 12 hat.");
+        g1.setFaktor(12);
+
+        System.out.println("Katarus zeigt seine Macht an (71).");
+        System.out.println(katarus.getMacht());
     }
 
 

@@ -10,7 +10,7 @@ public class Volk {
 
     public Volk(){
         this.mitglieder = new ArrayList<Krieger>();
-    };
+    }
     public Volk(String name, int gruendung) {
         this();
         this.name = name;
@@ -57,6 +57,7 @@ public class Volk {
                 if(chef != null){
                     counter += chef.getMacht();
                 }
+
                 return counter;
 
             }
