@@ -1,6 +1,7 @@
 package ktaris;
 
 import java.util.ArrayList;
+import consoleHelper.ConsoleHelper;
 
 public class Krieger {
     private String name;
@@ -37,17 +38,39 @@ public class Krieger {
             gegenstaende.remove(gegenstand);
             System.out.println( this.name + " hat abgegeben: " + gegenstand);
             berechneMacht();
-            System.out.println(this);
+
         }else{
             gegenstaende.add(gegenstand);
             System.out.println(this.name + " hat aufgenommen: " + gegenstand);
             berechneMacht();
-            System.out.println(this);
+
 
         }
 
     }
-    public void treffen(Krieger krieger){}
+    public void treffen(Krieger krieger){
+        ArrayList<Krieger>teilnehmer = new ArrayList<>();
+        teilnehmer.add(this);
+        teilnehmer.add(krieger);
+
+        // Menu
+        ConsoleHelper.header("Treffen");
+        ConsoleHelper.printMenuElement(1, "Gegenstand von " + this.name + " zu " + krieger.name);
+        ConsoleHelper.printMenuElement(2, "Gegenstand von " + krieger.name + " zu " + this.name );
+        int inputWahlVerkaeufer= (ConsoleHelper.inputInt("Wählen Sie", 1,2)) -1 ;
+
+        Krieger auserwaehlter = teilnehmer.get(inputWahlVerkaeufer);
+        teilnehmer.remove(auserwaehlter);
+        Krieger tauschpartner = teilnehmer.get(0);
+        teilnehmer.add(auserwaehlter);
+
+        int inputWahlItem = (ConsoleHelper.printMenu("Gegenstand von " + auserwaehlter.name + " zu " + tauschpartner.name , auserwaehlter.gegenstaende)) - 1;
+        Gegenstand gegenstandAuserwaehlter = auserwaehlter.gegenstaende.get(inputWahlItem);
+
+        auserwaehlter.handeln(gegenstandAuserwaehlter);
+        tauschpartner.handeln(gegenstandAuserwaehlter);
+
+    }
 
     public String getName() {
         return name;

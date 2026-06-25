@@ -1,3 +1,4 @@
+
 package ktaris;
 
 public class KtarisMain {
@@ -148,6 +149,9 @@ public class KtarisMain {
 
         System.out.println("Katarus zeigt seine Macht an (71).");
         System.out.println(katarus.getMacht());
+
+        tystae.treffen(allana);
+
     }
 
 
