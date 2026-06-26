@@ -2,6 +2,10 @@
 package ktaris;
 
 public class KtarisMain {
+    /**
+     * Demonstriert die Klassen des Ktaris-Modells (Gegenstand, Krieger, Volk)
+     * anhand der Aufgaben A4.1 bis A4.4.
+     */
 
     public static void main(String[] args) {
         //4.1.1
