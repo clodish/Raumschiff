@@ -90,8 +90,10 @@ public class Krieger {
     /**
      * Simuliert ein Treffen zwischen diesem Krieger und einem anderen.
      * Über die Konsole wird abgefragt, wer von beiden einen Gegenstand
-     * abgibt und welcher Gegenstand dabei den Besitzer wechselt. Anschließend
-     * wird der Tausch über {@link #handeln(Gegenstand)} auf beiden Seiten ausgeführt.
+     * abgibt. Besitzt der ausgewählte Krieger keine Gegenstände, wird das
+     * Treffen abgebrochen. Andernfalls wird abgefragt, welcher Gegenstand
+     * den Besitzer wechselt, und der Tausch wird über {@link #handeln(Gegenstand)}
+     * auf beiden Seiten ausgeführt.
      *
      * @param krieger der Krieger, der getroffen wird
      */
@@ -111,15 +113,17 @@ public class Krieger {
         Krieger auserwaehlter = teilnehmer.get(inputWahlVerkaeufer);
         teilnehmer.remove(auserwaehlter);
         Krieger tauschpartner = teilnehmer.get(0);
+        ArrayList <Gegenstand> gegenstaendeAuserwaehlter = auserwaehlter.gegenstaende;
 
 
-
-        int inputWahlItem = (ConsoleHelper.printMenu("Gegenstand von " + auserwaehlter.name + " zu " + tauschpartner.name , auserwaehlter.gegenstaende)) - 1;
-        Gegenstand gegenstandAuserwaehlter = auserwaehlter.gegenstaende.get(inputWahlItem);
-
-        auserwaehlter.handeln(gegenstandAuserwaehlter);
-        tauschpartner.handeln(gegenstandAuserwaehlter);
-        //TODO Edgecases absichern
+        if(gegenstaendeAuserwaehlter.isEmpty()){
+            System.out.println("Der Tauschpartner hat keine Gegenstände. Treffen abgebrochen.");
+        }else {
+            int inputWahlItem = (ConsoleHelper.printMenu("Gegenstand von " + auserwaehlter.name + " zu " + tauschpartner.name , gegenstaendeAuserwaehlter)) - 1;
+            Gegenstand gegenstandAuserwaehlter = auserwaehlter.gegenstaende.get(inputWahlItem);
+            auserwaehlter.handeln(gegenstandAuserwaehlter);
+            tauschpartner.handeln(gegenstandAuserwaehlter);
+        }
     }
 
     /**

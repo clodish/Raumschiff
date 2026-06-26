@@ -147,7 +147,6 @@ public class KtarisMain {
         inaraSerra.handeln(g4);
         bria.handeln(g4);
 
-        // TODO reparieren
         System.out.println("Bei genauer Betrachtung fällt auf, dass die Quantenkanone von Allana nur den Faktor 12 hat.");
         g1.setFaktor(12);
 
