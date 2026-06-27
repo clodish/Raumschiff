@@ -156,18 +156,23 @@ public class KtarisMain {
         tystae.treffen(allana);
 
         //########################################################
-        // A5.1
-        // Erzeugen der Gegenstände ichayam tribble, karaoke, sandOfLife
-        GegenstandMitLebenserwartung ichaya = new GegenstandMitLebenserwartung ("I-chaya", 18, "Vulkan", 300);
-        GegenstandMitLebenserwartung tribble = new GegenstandMitLebenserwartung("Tribble", 1, "Qo'noS", 1);
-        GegenstandMitBaujahr sandOfLife = new GegenstandMitBaujahr("Vulkanischer Meditaions-Sandkasten", 51,"10 x 14 x 14 cm", 3, 2261 );
-        GegenstandMitBaujahr karaoke = new GegenstandMitBaujahr("Klingonischs Karaoke-Set", 5, "25 x 30 x 45 cm", 7, 2382 );
+        // A5.1 & A5.2
+        // Erzeugen der Gegenstände ichaya tribble, karaoke, sandOfLife
+        Spezies ichaya = new Spezies("I-chaya", 18, "Vulkan", 300);
+        Spezies tribble = new Spezies("Tribble", 1, "Qo'noS", 1);
+        Cargo sandOfLife = new Cargo("Vulkanischer Meditaions-Sandkasten", 51,"10 x 14 x 14 cm", 3, 2261 );
+        Cargo karaoke = new Cargo("Klingonischs Karaoke-Set", 5, "25 x 30 x 45 cm", 7, 2382 );
 
         System.out.println(ichaya);
         System.out.println(tribble);
         System.out.println(sandOfLife);
         System.out.println(karaoke);
 
+        arpasian.getMacht();
+        katarus.getMacht();
+
+        System.out.println(allana.gegenstaende);
+        System.out.println(bria.gegenstaende);
 
     }
 

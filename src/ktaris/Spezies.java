@@ -1,10 +1,10 @@
 package ktaris;
 
-public class GegenstandMitLebenserwartung extends Gegenstand {
+public class Spezies extends Gegenstand {
     private String heimat;
     private int lebenserwartung;
 
-    public GegenstandMitLebenserwartung(String typ, int faktor, String heimat, int lebenserwartung){
+    public Spezies(String typ, int faktor, String heimat, int lebenserwartung){
         super(typ, faktor);
         this.heimat = heimat;
         this.lebenserwartung = lebenserwartung;
@@ -29,11 +29,9 @@ public class GegenstandMitLebenserwartung extends Gegenstand {
 
     @Override
     public String toString() {
-        return "GegenstandMitLebenserwartung{" +
+        return "Spezies{" +
                 "heimat='" + heimat + '\'' +
                 ", lebenserwartung=" + lebenserwartung +
-                ", typ='" + typ + '\'' +
-                ", faktor=" + faktor +
-                '}';
+                "} " + super.toString();
     }
 }

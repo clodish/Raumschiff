@@ -1,11 +1,11 @@
 package ktaris;
 
-public class GegenstandMitBaujahr extends  Gegenstand{
+public class Cargo extends  Gegenstand{
     private String abmessung;
     private int gewicht;
     private int baujahr;
 
-public GegenstandMitBaujahr(String typ, int faktor, String abmessung, int gewicht, int baujahr){
+public Cargo(String typ, int faktor, String abmessung, int gewicht, int baujahr){
     super(typ, faktor);
     this.abmessung = abmessung;
     this.gewicht = gewicht;
@@ -38,12 +38,10 @@ public GegenstandMitBaujahr(String typ, int faktor, String abmessung, int gewich
 
     @Override
     public String toString() {
-        return "GegenstandMitBaujahr{" +
-                "abmessung='" + abmessung + '\'' +
-                ", gewicht=" + gewicht +
+        return "Cargo{" +
+                "gewicht=" + gewicht +
                 ", baujahr=" + baujahr +
-                ", typ='" + typ + '\'' +
-                ", faktor=" + faktor +
-                '}';
+                ", abmessung='" + abmessung + '\'' +
+                "} " + super.toString();
     }
 }
