@@ -173,7 +173,7 @@ public class KtarisMain {
 
         System.out.println(allana.gegenstaende);
         System.out.println(bria.gegenstaende);
-
+        // A5.3 bereits erledigt
     }
 
 
