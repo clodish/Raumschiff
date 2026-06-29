@@ -44,6 +44,7 @@ public class Krieger {
         this.name = name;
         this.macht = macht;
     }
+
     /**
      * Fügt dem Krieger einen Gegenstand hinzu, falls er ihn noch nicht besitzt.
      * Gibt eine entsprechende Meldung auf der Konsole aus.

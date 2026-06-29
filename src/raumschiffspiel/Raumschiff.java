@@ -2,16 +2,20 @@ package raumschiffspiel;
 
 import  java.util.Scanner;
 public class Raumschiff {
-    String name;
-    int posX;
-    int posY;
+    private String name;
+    private int posX;
+    private int posY;
+    private Kapitaen kapitaen;
 
-    Raumschiff(){}
-    Raumschiff(String name, int posX, int posY){
+
+    Raumschiff(String name, int posX, int posY, Kapitaen kapitaen){
         this.name = name;
         this.posX = posX;
         this.posY = posY;
+        this.kapitaen = kapitaen;
+
     }
+
     public void fliegen(char richtung){
         System.out.println("Deine Position lautet: (" + this.getPosX() + ", " + this.getPosY() + ")");
         System.out.println("Bewege das Raumschiff, indem du eine der folgenden Tasten drückst: 'a' , 'w' , 's', 'd'" );
@@ -67,5 +71,18 @@ public class Raumschiff {
 
     public void setPosY(int posY) {
         this.posY = posY;
+    }
+    public Kapitaen getKapitaen(){
+        return  kapitaen;
+    }
+
+    @Override
+    public String toString() {
+        return "Raumschiff{" +
+                "name='" + name + '\'' +
+                ", posX=" + posX +
+                ", posY=" + posY +
+                ", kapitaen=" + kapitaen +
+                '}';
     }
 }
